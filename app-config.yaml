@@ -183,6 +183,14 @@ auth:
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
 
+nerv:
+  releaseBot:
+    # Fine-grained token with Contents read/write on camnoss/central-dogma only.
+    # nerv:release-bot:connect copies it into new service repositories so their CI
+    # can trigger the Central Dogma release bot. Without it, services still
+    # deploy on the bot's hourly run.
+    dispatchToken: ${DOGMA_DISPATCH_TOKEN}
+
 catalog:
   import:
     entityFilename: catalog-info.yaml

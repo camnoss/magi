@@ -19,6 +19,8 @@ backend.add(import('@backstage/plugin-scaffolder-backend-module-github'));
 backend.add(
   import('@backstage/plugin-scaffolder-backend-module-notifications'),
 );
+// nerv:release-bot:connect, used by Eva Templates
+backend.add(import('./modules/nervReleaseBot'));
 
 // techdocs plugin
 backend.add(import('@backstage/plugin-techdocs-backend'));
