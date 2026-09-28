@@ -43,6 +43,9 @@ site
 # Local configuration files
 *.local.yaml
 
+# Local SQLite databases (see app-config.local.yaml)
+.sqlite/
+
 # Sensitive credentials
 *-credentials.yaml
 
