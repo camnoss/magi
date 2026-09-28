@@ -206,6 +206,19 @@ catalog:
       rules:
         - allow: [User, Group]
 
+    # Nerv organization: teams and users
+    - type: file
+      target: ../../catalog/org.yaml
+      rules:
+        - allow: [User, Group]
+
+    # Eva Templates: golden paths. The Location lists every template, so new
+    # templates show up without changing this config.
+    - type: url
+      target: https://github.com/camnoss/eva-templates/blob/main/catalog-info.yaml
+      rules:
+        - allow: [Template]
+
     ## Uncomment these lines to add more example data
     # - type: url
     #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
