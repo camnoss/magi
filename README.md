@@ -109,6 +109,15 @@ spec:
 
 Then register it from the MAGI UI (**Create → Register Existing Component**) or add its URL to the `catalog.locations` section of `app-config.yaml`. Repositories created from Eva Templates are registered automatically.
 
+## Event streams
+
+MAGI shows every event stream in [Central Dogma](https://github.com/camnoss/central-dogma#event-streams) as an `API` of type `asyncapi`. The catalog reads `streams/*/*/catalog-info.yaml` from Central Dogma's `main` branch, so a stream appears once its pull request merges. That location only accepts `API` and `Component` entities.
+
+- **The AsyncAPI definition** uses the `$asyncapi` placeholder (`@backstage/plugin-catalog-backend-module-openapi`), which bundles the document's `$ref` to the Avro schema so the API page renders the full payload. The module is pinned to 0.2.26, the version released with Backstage 1.55.0; newer versions need a newer `@backstage/backend-plugin-api`.
+- **The producer** comes from the `nerv.io/producer` annotation on the API. The `nervEventStreams` catalog module (`packages/backend/src/modules/nervEventStreams.ts`) turns it into the same relations as `providesApis`, so a stream created from the `event-state-stream` template links to an existing service without editing that service's repository.
+- **Consumers** add the API to `consumesApis` in their own `catalog-info.yaml`.
+- **Owners and systems:** each domain is a `System` in `catalog/systems.yaml`, owned by a team in `catalog/org.yaml`. The domain teams there are placeholders until the real team list is loaded.
+
 ---
 
 ## Building the container image
