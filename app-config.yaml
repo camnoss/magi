@@ -227,6 +227,13 @@ catalog:
       rules:
         - allow: [Template]
 
+    # Nerv systems: one per business domain
+    - type: file
+      target: ../../catalog/systems.yaml
+      rules:
+        - allow: [System]
+
+
     ## Uncomment these lines to add more example data
     # - type: url
     #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml

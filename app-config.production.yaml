@@ -66,3 +66,10 @@ catalog:
       target: https://github.com/camnoss/eva-templates/blob/main/catalog-info.yaml
       rules:
         - allow: [Template]
+
+    # Nerv systems: one per business domain
+    - type: file
+      target: ./catalog/systems.yaml
+      rules:
+        - allow: [System]
+
