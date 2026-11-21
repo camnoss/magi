@@ -42,6 +42,8 @@ backend.add(import('@backstage/plugin-catalog-backend-module-logs'));
 // $asyncapi placeholder: bundles the $refs of stream AsyncAPI documents (the
 // Avro schema file) so the API page renders the full message payload.
 backend.add(import('@backstage/plugin-catalog-backend-module-openapi'));
+// nerv.io/producer annotation on event stream APIs, from Central Dogma
+backend.add(import('./modules/nervEventStreams'));
 
 // permission plugin
 backend.add(import('@backstage/plugin-permission-backend'));
