@@ -39,6 +39,9 @@ backend.add(
 
 // See https://backstage.io/docs/features/software-catalog/configuration#subscribing-to-catalog-errors
 backend.add(import('@backstage/plugin-catalog-backend-module-logs'));
+// $asyncapi placeholder: bundles the $refs of stream AsyncAPI documents (the
+// Avro schema file) so the API page renders the full message payload.
+backend.add(import('@backstage/plugin-catalog-backend-module-openapi'));
 
 // permission plugin
 backend.add(import('@backstage/plugin-permission-backend'));
