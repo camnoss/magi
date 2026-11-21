@@ -1,0 +1,28 @@
+# One System per business domain. Event streams created from the
+# event-state-stream Eva Template belong to the System of their domain.
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: billing
+  title: Billing
+  description: Rating, billing and invoicing on Oracle BRM.
+spec:
+  owner: group:default/team-tarificacion-facturacion
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: payments
+  title: Payments
+  description: Payments and collections.
+spec:
+  owner: group:default/team-pagos-cartera
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: customers
+  title: Customers
+  description: Customer accounts and profiles.
+spec:
+  owner: group:default/team-clientes

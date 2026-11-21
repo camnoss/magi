@@ -227,6 +227,19 @@ catalog:
       rules:
         - allow: [Template]
 
+    # Nerv systems: one per business domain
+    - type: file
+      target: ../../catalog/systems.yaml
+      rules:
+        - allow: [System]
+
+    # Event streams in Central Dogma: the API of every stream folder, with its
+    # producer and consumers. New streams show up without changing this config.
+    - type: url
+      target: https://github.com/camnoss/central-dogma/blob/main/streams/*/*/catalog-info.yaml
+      rules:
+        - allow: [API, Component]
+
     ## Uncomment these lines to add more example data
     # - type: url
     #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml

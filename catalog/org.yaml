@@ -9,3 +9,35 @@ metadata:
 spec:
   type: team
   children: []
+---
+# TODO: the domain teams below are placeholders until the real team list is
+# loaded into MAGI. They own event streams in Central Dogma.
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-tarificacion-facturacion
+  title: Tarificación y Facturación
+  description: Rating and billing. Owns the billing domain and its Oracle BRM streams.
+spec:
+  type: team
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-pagos-cartera
+  title: Pagos y Cartera
+  description: Payments and collections. Owns the payments domain.
+spec:
+  type: team
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-clientes
+  title: Clientes
+  description: Customer management. Owns the customers domain.
+spec:
+  type: team
+  children: []
